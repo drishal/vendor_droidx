@@ -26,7 +26,7 @@ DROIDX_OTA_PACKAGE := droidx-$(DROIDX_VERSION)-$(DROIDX_ZIP_TYPE).zip
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
-bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
+bacon: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(DROIDX_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(DROIDX_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(DROIDX_TARGET_PACKAGE).sha256sum
 	$(hide) ./vendor/droidx/build/tools/generate_json.sh $(TARGET_DEVICE) $(PRODUCT_OUT) $(DROIDX_OTA_PACKAGE)
