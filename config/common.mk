@@ -256,9 +256,6 @@ $(call inherit-product, vendor/bcr/bcr.mk)
 # Inherit SystemUI Clocks if they exist
 $(call inherit-product-if-exists, vendor/SystemUIClocks/product.mk)
 
-# Vendor Certification
-$(call inherit-product-if-exists, vendor/certification/config.mk)
-
 # Fonts
 $(call inherit-product, vendor/droidx/config/fonts.mk)
 
