@@ -114,7 +114,8 @@ PRODUCT_PACKAGES += \
 
 # Config
 PRODUCT_PACKAGES += \
-    SimpleDeviceConfig
+    SimpleDeviceConfig \
+    SimpleSettingsConfig
 
 # Updater
 PRODUCT_PACKAGES += \
