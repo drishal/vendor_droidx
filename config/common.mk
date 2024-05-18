@@ -9,8 +9,14 @@ DROIDX_ZIP_TYPE := Vanilla
 
 # Gapps
 ifeq ($(DROIDX_GAPPS), true)
-    # $(call inherit-product, vendor/gms/products/gms.mk)
+    $(call inherit-product, vendor/gms/products/gms.mk)
     DROIDX_ZIP_TYPE := Gapps
+else
+PRODUCT_PRODUCT_PROPERTIES += \
+    setupwizard.theme=glif_v4 \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.alarm_alert=Hassium.ogg \
+    ro.config.ringtone=Ring_Classic_02.ogg
 endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -218,8 +224,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # SetupWizard
 PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_v4 \
-    setupwizard.feature.day_night_mode_enabled=true
+    setupwizard.feature.day_night_mode_enabled=true \
 
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/droidx/overlay/common 
