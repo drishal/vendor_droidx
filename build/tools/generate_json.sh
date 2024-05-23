@@ -105,7 +105,7 @@ else
 }' >> $output
 
         echo 'There is no official support for this device yet'
-        echo 'Apply from official from https://github.com/DroidX-UI/official'
+        echo 'Apply from official from https://github.com/DroidX-UI-Devices/vendor_droidxOTA'
 fi
 
 echo ""
